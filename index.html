@@ -15,8 +15,6 @@
 		margin: 0;
 	}
 
-
-
 	#nav, #footer {
 		background-color: #344f69;
 		width: 100%;
@@ -179,7 +177,7 @@
 			if ( wmsLayers[i]['Name'].match(/^\./) ) {
 				continue;
 			}
-			 layerList.innerHTML += "<li><a href='#''>" + wmsLayers[i]['Name'] + "</a></li>";
+			 layerList.innerHTML += '<li onclick=\'demo.setParams({layers: "' + wmsLayers[i]['Name'] + '"});\' id="wms-layer-' + i + '"><a href="#">' + wmsLayers[i]['Name'] + '</a></li>';
 		}
 
 		var themap = L.map('map', { 'zoomControl': false, 'attributionControl': false }).setView([40.58058, -26.0152], 3);
@@ -189,6 +187,8 @@
 		    format: 'image/png',
 		    transparent: true
 		});
+
+
 
 		demo.addTo(themap);
 
