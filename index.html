@@ -177,7 +177,9 @@
 			if ( wmsLayers[i]['Name'].match(/^\./) ) {
 				continue;
 			}
-			 layerList.innerHTML += '<li onclick=\'demo.setParams({layers: "' + wmsLayers[i]['Name'] + '"});\' id="wms-layer-' + i + '"><a href="#">' + wmsLayers[i]['Name'] + '</a></li>';
+			 layerList.innerHTML += '<li onclick=\'demo.setParams({layers: "MODIS,' + wmsLayers[i]['Name'] + '"});\' id="wms-layer-' + i + '"><a href="#">' + wmsLayers[i]['Name'] + '</a></li>';
+			 //L.marker().addTo(map);
+			 console.logwmsLayers[i]['LatLonBoundingBox']['@minx'], wmsLayers[i]['LatLonBoundingBox']['@maxy']
 		}
 
 		var themap = L.map('map', { 'zoomControl': false, 'attributionControl': false }).setView([40.58058, -26.0152], 3);
